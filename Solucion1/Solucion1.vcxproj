@@ -19,7 +19,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Paleta.cpp" />
+    <ClCompile Include="..\src\Pantalla de juego.cpp" />
+    <ClCompile Include="..\src\Pantalla game over.cpp" />
+    <ClCompile Include="..\src\Draw.cpp" />
+    <ClCompile Include="..\src\PantallaMenu.cpp" />
+    <ClCompile Include="..\src\Pelota.cpp" />
     <ClCompile Include="..\src\Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Headers\Paleta.h" />
+    <ClInclude Include="..\Headers\Pantalla de juego.h" />
+    <ClInclude Include="..\Headers\Pantalla game over.h" />
+    <ClInclude Include="..\Headers\Pantalla gameplay.h" />
+    <ClInclude Include="..\Headers\PantallaMenu.h" />
+    <ClInclude Include="..\Headers\Pelota.h" />
+    <ClInclude Include="..\Headers\Source.h" />
+    <ClInclude Include="..\Headers\GlobalShit.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AF21F123-80AB-4F52-8AA1-B5957092975C}</ProjectGuid>

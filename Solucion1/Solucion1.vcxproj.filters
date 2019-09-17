@@ -1,13 +1,66 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Codigo fuente">
-      <UniqueIdentifier>{95844fb0-9152-4c61-9566-0e1f85dfac57}</UniqueIdentifier>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{9a7e99a1-c5b8-451d-aa73-a736b3ade84d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{f68585f2-6c52-4f56-b092-07fe57ee1a34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Screens">
+      <UniqueIdentifier>{d9a6c550-12ac-42fe-b9d2-2a271137c0aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Objetos">
+      <UniqueIdentifier>{a324f969-becd-43b6-8a49-62f69c73053d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Source.cpp">
-      <Filter>Codigo fuente</Filter>
+      <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Pantalla de juego.cpp">
+      <Filter>src\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Pantalla game over.cpp">
+      <Filter>src\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Paleta.cpp">
+      <Filter>src\Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Pelota.cpp">
+      <Filter>src\Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Draw.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\PantallaMenu.cpp">
+      <Filter>src\Screens</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Headers\Paleta.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Pantalla de juego.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Pantalla game over.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Pantalla gameplay.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\PantallaMenu.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Pelota.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\Source.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Headers\GlobalShit.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
