@@ -1,10 +1,11 @@
 #include "../Headers/Pantalla gameplay.h"
 
 
-
-void TextColor(int ColorName)
+namespace Draw
 {
-	switch (ColorName) {
+void ChangeColor(int colorName)
+{
+	switch (colorName) {
 	case 1:
 		//Red
 		slSetForeColor(3.0, 0.0, 0.0, 1.0);
@@ -21,54 +22,74 @@ void TextColor(int ColorName)
 		//Yellow
 		slSetForeColor(3.0, 1.8, 0.2, 1.0);
 		break;
+	case 5:
+		//White
+		slSetForeColor(3.0, 1.8, 1.2, 1.0);
+		break;
+	case 6:
+		//Orange
+		slSetForeColor(3.0, 1.8, 0.2, 1.0);
+		break;
+	case 7:
+		//Cyan
+		slSetForeColor(0.0, 2.8, 1.2, 1.0);
+		break;
+	case 8:
+		//Purple
+		slSetForeColor(2.0, 0.0, 2.8, 1.0);
+		break;
 	default:
 		break;
 	}
 }
 
-void DrawGamePlay(Ball& Pelota, Player& Player1, Player& Player2, int& CurrentScreen)
+void gamePlay(Ball& pelota, Player& player1, Player& player2, int& currentScreen)
 {
 	slSetFontSize(11);
-	TextColor(Red);
-	slRectangleFill(Player1.Rec.Pos.x, Player1.Rec.Pos.y, Player1.Rec.width, Player1.Rec.height);
-	TextColor(Blue);
-	slRectangleFill(Player2.Rec.Pos.x, Player2.Rec.Pos.y, Player2.Rec.width, Player2.Rec.height);
-	TextColor(Yellow);
-	slCircleFill(Pelota.Position.x, Pelota.Position.y, Pelota.Radius, Pelota.numVertices);
+	ChangeColor(Red);
+	slRectangleFill(player1.rec.pos.x, player1.rec.pos.y, player1.rec.width, player1.rec.height);
+	ChangeColor(Blue);
+	slRectangleFill(player2.rec.pos.x, player2.rec.pos.y, player2.rec.width, player2.rec.height);
+	ChangeColor(Yellow);
+	slCircleFill(pelota.Position.x, pelota.Position.y, pelota.Radius, pelota.numVertices);
 
-	string PuntosP1 = (" Puntos Player 1: " + (to_string(Player1.Puntos)));
-	string PuntosP2 = (" Puntos Player 2: " + (to_string(Player2.Puntos)));
-	TextColor(Red);
-	slText(20, screenHeight - 20, PuntosP1.c_str());
-	TextColor(Blue);
+	string PuntosP1 = (" Puntos Player 1: " + (to_string(player1.puntos)));
+	string PuntosP2 = (" Puntos Player 2: " + (to_string(player2.puntos)));
+	ChangeColor(Red);
+	slText(50, screenHeight - 20, PuntosP1.c_str());
+	ChangeColor(Blue);
 	slText(screenWidth - 180, screenHeight - 20, PuntosP2.c_str());
 	if (slGetKey(SL_KEY_ESCAPE))
 	{
-		Menu(Player1, Player2, Pelota, CurrentScreen);
+		Menu(player1, player2, pelota, currentScreen);
 	}
-	if (Player1.Puntos > 1) { GameOver( Player1, Player2, Pelota, CurrentScreen); }
-	if (Player2.Puntos > 1) { GameOver( Player1, Player2, Pelota, CurrentScreen); }
+	
 
 	slRender(); // draw everything
 }
 
-void DrawMenu() {
-	TextColor(Green);
+void menu() {
+	ChangeColor(Green);
 	slSetFontSize(30);
 	slText(60, screenHeight / 2, "Presion esc para salir y enter para iniciar ");
 	slRender();
 }
 
-void DrawGameOver() {
+void gameOver(bool P1Win) {
 	slSetFontSize(30);
 
-	TextColor(Red);
+	if (P1Win == true)
+	{	
+	ChangeColor(Red);
 	slText(60, screenHeight / 2, "Player 1 victory");
 	//Player 1 win
-
-	TextColor(Blue);
+	}
+	if (P1Win == false)
+	{
+	ChangeColor(Blue);
 	slText(60, screenHeight / 2, "Player 2 victory");
 	//Player 2 win
-
+	}
 	slRender();
+}
 }

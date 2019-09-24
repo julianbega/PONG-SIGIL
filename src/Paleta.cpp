@@ -1,24 +1,27 @@
 #include "../Headers/Paleta.h"
 
-void MovePlayer(Player& Player, int KeyUp, int KeyDown)
+namespace Paleta
 {
-	if (slGetKey(KeyUp) && Player.Rec.Pos.y <= screenHeight - Player.Rec.height / 2)
+void MovePlayer(Player& player, int KeyUp, int KeyDown)
+{
+	if (slGetKey(KeyUp) && player.rec.pos.y <= screenHeight - player.rec.height / 2)
 	{
-		Player.Rec.Pos.y = Player.Rec.Pos.y + 3;
+		player.rec.pos.y = player.rec.pos.y + 300 * slGetDeltaTime();
 	}
-	if (slGetKey(KeyDown) && Player.Rec.Pos.y >= 0 + Player.Rec.height / 2)
+	if (slGetKey(KeyDown) && player.rec.pos.y >= 0 + player.rec.height / 2)
 	{
-		Player.Rec.Pos.y = Player.Rec.Pos.y - 3;
+		player.rec.pos.y = player.rec.pos.y - 300 * slGetDeltaTime();
 	}
 }
 Player InitPlayer(int posX, int posY, int width, int height)
 {
 	Player player;
-	player.Rec.Pos.x = posX;
-	player.Rec.Pos.y = posY;
-	player.Rec.width = width;
-	player.Rec.height = height;
-	player.Puntos = 0;
-	player.TotalScore = 0;
+	player.rec.pos.x = posX;
+	player.rec.pos.y = posY;
+	player.rec.width = width;
+	player.rec.height = height;
+	player.puntos = 0;
+	player.totalScore = 0;
 	return player;
+}
 }

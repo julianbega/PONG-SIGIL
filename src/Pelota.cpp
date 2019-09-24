@@ -1,51 +1,53 @@
 #include "../Headers/Pelota.h"
 
-void BallMovment(Ball& Pelota)
+namespace Pelota 
 {
-	if (Pelota.Arriba == true)
+void BallMovment(Ball& pelota)
+{
+	if (pelota.Arriba == true)
 	{
-		if (Pelota.Derecha == true)
+		if (pelota.Derecha == true)
 		{
-			Pelota.Position.x = Pelota.Position.x + Pelota.StandarSpeed;
-			Pelota.Position.y = Pelota.Position.y + Pelota.StandarSpeed;
+			pelota.Position.x = pelota.Position.x + pelota.StandarSpeed* slGetDeltaTime();
+			pelota.Position.y = pelota.Position.y + pelota.StandarSpeed* slGetDeltaTime();
 		}
 		else
 		{
-			Pelota.Position.x = Pelota.Position.x - Pelota.StandarSpeed;
-			Pelota.Position.y = Pelota.Position.y + Pelota.StandarSpeed;
+			pelota.Position.x = pelota.Position.x - pelota.StandarSpeed* slGetDeltaTime();
+			pelota.Position.y = pelota.Position.y + pelota.StandarSpeed* slGetDeltaTime();
 		}
 	}
 	else
 	{
-		if (Pelota.Derecha == true)
+		if (pelota.Derecha == true)
 		{
-			Pelota.Position.x = Pelota.Position.x + Pelota.StandarSpeed;
-			Pelota.Position.y = Pelota.Position.y - Pelota.StandarSpeed;
+			pelota.Position.x = pelota.Position.x + pelota.StandarSpeed* slGetDeltaTime();
+			pelota.Position.y = pelota.Position.y - pelota.StandarSpeed* slGetDeltaTime();
 		}
 		else
 		{
-			Pelota.Position.x = Pelota.Position.x - Pelota.StandarSpeed;
-			Pelota.Position.y = Pelota.Position.y - Pelota.StandarSpeed;
+			pelota.Position.x = pelota.Position.x - pelota.StandarSpeed* slGetDeltaTime();
+			pelota.Position.y = pelota.Position.y - pelota.StandarSpeed* slGetDeltaTime();
 		}
 	}
 }
-void BallMovmentLimit(Ball& Pelota, Player& Player1, Player& Player2)
+void BallMovmentLimit(Ball& pelota, Player& player1, Player& player2)
 {
-	if (Pelota.Position.y <= 0 + Pelota.Radius) { Pelota.Arriba = true; }
-	if (Pelota.Position.y >= screenHeight - Pelota.Radius) { Pelota.Arriba = false; }
-	if (Pelota.Position.x <= 0 + Pelota.Radius) { Pelota.Derecha = true; Player2.Puntos++; }
-	if (Pelota.Position.x >= screenWidth - Pelota.Radius) { Pelota.Derecha = false; Player1.Puntos++; }
+	if (pelota.Position.y <= 0 + pelota.Radius) { pelota.Arriba = true; }
+	if (pelota.Position.y >= screenHeight - pelota.Radius) { pelota.Arriba = false; }
+	if (pelota.Position.x <= 0 + pelota.Radius) { pelota.Derecha = true; player2.puntos++; }
+	if (pelota.Position.x >= screenWidth - pelota.Radius) { pelota.Derecha = false; player1.puntos++; }
 }
 
-void BallColisionWithPlayers(Ball& Pelota, Player& Player1, Player& Player2)
+void BallColisionWithPlayers(Ball& pelota, Player& player1, Player& player2)
 {
-	if (Pelota.Position.x <= Player1.Rec.Pos.x + Player1.Rec.width / 2 + Pelota.Radius && Pelota.Position.y <= Player1.Rec.Pos.y + Player1.Rec.height / 2 && Pelota.Position.y >= Player1.Rec.Pos.y - Player1.Rec.height / 2)
+	if (pelota.Position.x-pelota.Radius <= player1.rec.pos.x + player1.rec.width / 2 + pelota.Radius && pelota.Position.y-pelota.Radius <= player1.rec.pos.y + player1.rec.height / 2 && pelota.Position.y+pelota.Radius >= player1.rec.pos.y - player1.rec.height / 2 && pelota.Position.x + pelota.Radius >= player1.rec.pos.x + player1.rec.width / 2 )
 	{
-		Pelota.Derecha = true;
+		pelota.Derecha = true;
 	}
-	if (Pelota.Position.x >= Player2.Rec.Pos.x - Player2.Rec.width / 2 - Pelota.Radius && Pelota.Position.y <= Player2.Rec.Pos.y + Player2.Rec.height / 2 && Pelota.Position.y >= Player2.Rec.Pos.y - Player2.Rec.height / 2)
+	if (pelota.Position.x+pelota.Radius >= player2.rec.pos.x - player2.rec.width / 2 - pelota.Radius && pelota.Position.y-pelota.Radius <= player2.rec.pos.y + player2.rec.height / 2 && pelota.Position.y+ pelota.Radius >= player2.rec.pos.y - player2.rec.height / 2 && pelota.Position.x - pelota.Radius <= player2.rec.pos.x - player2.rec.width / 2)
 	{
-		Pelota.Derecha = false;
+		pelota.Derecha = false;
 	}
 }
 
@@ -55,8 +57,9 @@ Ball InitPelota(int posX, int posY, int radius) {
 	Pelota.Position.y = posY;
 	Pelota.Radius = radius;
 	Pelota.numVertices = 50;
-	Pelota.StandarSpeed = 4;
+	Pelota.StandarSpeed = 400;
 	Pelota.Arriba = true;
 	Pelota.Derecha = true;
 	return Pelota;
+}
 }

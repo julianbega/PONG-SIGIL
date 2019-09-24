@@ -1,29 +1,27 @@
 #ifndef PALETA_H
 #define PALETA_H
 #include "..\Lib\sigil-vc2015\include\sl.h"
-#include <string>
-#include <iostream>
-using namespace std;
 #include "GlobalShit.h"
 
 struct Rectangle
 {
-	Vector2 Pos;
+	Vector2 pos;
 	float width;
 	float height;
 
 };
 struct Player
 {
-	Rectangle Rec;
-	int ChooseColor;
-	int Puntos;
-	int TotalScore;
+	Rectangle rec;
+	int chooseColor;
+	int puntos;
+	int totalScore;
 
 };
-
-void MovePlayer(Player& Player, int KeyUp, int KeyDown);
+namespace Paleta
+{
+void MovePlayer(Player& player, int KeyUp, int KeyDown);
 Player InitPlayer(int posX, int posY, int width, int height);
-
+}
 
 #endif // !PALETA_H

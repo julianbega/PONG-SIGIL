@@ -1,56 +1,77 @@
 #include "../Headers/Pantalla de juego.h"
 
-Ball Pelota;
-Player Player1;
-Player Player2;
-int CurrentScreen;
 
-void PVP(Player& Player1, Player& Player2, Ball& Pelota, int CurrentScreen)
+namespace Game
 {
-	
-		MovePlayer(Player1, 'W', 'S');
-		MovePlayer(Player2, SL_KEY_UP, SL_KEY_DOWN);
-		BallMovment(Pelota);
-		BallMovmentLimit(Pelota, Player1, Player2);
-		BallColisionWithPlayers(Pelota, Player1, Player2);
-		DrawGamePlay(Pelota, Player1, Player2, CurrentScreen);
-	
-}
-
-void GameInit() {
-
-	Init();
-	while (!slShouldClose())
+	void PVP(Player& player1, Player& player2, Ball& pelota, int& currentScreen)
 	{
-		switch (CurrentScreen)
+
+		Paleta::MovePlayer(player1, 'W', 'S');
+		Paleta::MovePlayer(player2, SL_KEY_UP, SL_KEY_DOWN);
+		Pelota::BallMovment(pelota);
+		Pelota::BallMovmentLimit(pelota, player1, player2);
+		Pelota::BallColisionWithPlayers(pelota, player1, player2);
+		Draw::gamePlay(pelota, player1, player2, currentScreen);
+		if (player1.puntos > 1) {
+			currentScreen = GameOverScreen;
+		}
+		if (player2.puntos > 1) {
+			currentScreen = GameOverScreen;
+		}
+		if (slGetKey('X'))
 		{
+			currentScreen = MenuScreen;
+		}
+
+	}
+
+	void loop() {
+
+		Ball pelota;
+		Player player1;
+		Player player2;
+		int currentScreen;
+		Init(player1, player2, pelota, currentScreen);
+		Update(player1, player2, pelota, currentScreen);
+
+	}
+
+	void Update(Player& player1, Player& player2, Ball& pelota, int& currentScreen)
+	{
+		bool gameIsRuning = true;
+		while (gameIsRuning)
+		{
+			switch (currentScreen)
+			{
 			case MenuScreen:
-				Menu(Player1, Player2, Pelota, CurrentScreen);
-			break;
+				Menu(player1, player2, pelota, currentScreen);
+				break;
 
 			case GameplayScreen:
-				PVP(Player1, Player2, Pelota, CurrentScreen);
-			break;
+				PVP(player1, player2, pelota, currentScreen);
+				break;
 
 			case GameOverScreen:
-				GameOver(Player1, Player2, Pelota, CurrentScreen);
-			break;
-			
+				GameOver(player1, player2, pelota, currentScreen);
+				break;
+
+			case End:
+				gameIsRuning = false;
+				break;
 			default:
-			break;
-		}	
+				break;
+			}
+		}
+		slClose();
+	}
+
+	void Init(Player& player1, Player& player2, Ball& pelota, int& currentScreen) {
+		currentScreen = 1;
+		pelota = Pelota::InitPelota(screenWidth / 2, screenHeight / 2, 9);
+		player1 = Paleta::InitPlayer(40, 80, 20, 80);
+		player2 = Paleta::InitPlayer(screenWidth - 40, 80, 20, 80);
+		// set up our window and a few resources we need
+		slWindow(screenWidth, screenHeight, "Simple SIGIL Example", false);
+		slSetFont(slLoadFont("../Fonts/white_rabbit.ttf"), 24);
 	}
 }
-
-
-
-void Init() {
-	CurrentScreen = 1;
-	Pelota = InitPelota(screenWidth / 2, screenHeight / 2, 9);
-	Player1 = InitPlayer(40, 80, 20, 80);
-	Player2 = InitPlayer(screenWidth - 40, 80, 20, 80);
-	// set up our window and a few resources we need
-	slWindow(screenWidth, screenHeight, "Simple SIGIL Example", false);
-	slSetFont(slLoadFont("../Fonts/white_rabbit.ttf"), 24);
-}
-

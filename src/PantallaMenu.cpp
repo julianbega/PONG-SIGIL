@@ -1,18 +1,18 @@
 #include "../Headers/PantallaMenu.h"
 
-void Menu(Player& Player1, Player& Player2, Ball& Pelota, int& CurrentScreen){
-	MenuUpdate(CurrentScreen);
-	DrawMenu();
+void Menu(Player& player1, Player& player2, Ball& pelota, int& currentScreen){
+	MenuUpdate(currentScreen);
+	Draw::menu();
 }
 
-void MenuUpdate(int& CurrentScreen) {
+void MenuUpdate(int& currentScreen) {
 
 	if (slGetKey(SL_KEY_ESCAPE))
 	{
-		slClose();
+		currentScreen = End;
 	}
 	if (slGetKey(SL_KEY_ENTER))
 	{
-		CurrentScreen = GameOverScreen;
+		currentScreen = GameplayScreen;
 	}
 }

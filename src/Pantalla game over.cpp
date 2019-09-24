@@ -1,11 +1,19 @@
 #include "../Headers/Pantalla game over.h"
 
-void GameOver(Player& Player1, Player& Player2, Ball& Pelota, int& CurrentScreen)
+void GameOver(Player& player1, Player& player2, Ball& pelota, int& currentScreen)
 {
 	
 		if (slGetKey(SL_KEY_ESCAPE))
 		{
-			CurrentScreen = MenuScreen;
+			currentScreen = MenuScreen;
 		}
-		DrawGameOver();
+		if (player1.puntos > player2.puntos)
+		{
+			Draw::gameOver(true);
+		}
+		else 
+		{
+			Draw::gameOver(false);
+		}
+		
 }

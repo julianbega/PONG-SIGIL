@@ -1,11 +1,11 @@
 #ifndef PELOTA_H
 #define PELOTA_H
+
 #include "GlobalShit.h"
-#include "..\Lib\sigil-vc2015\include\sl.h"
 #include "Paleta.h"
+
 #include <string>
-#include <iostream>
-using namespace std;
+
 
 struct Ball
 {
@@ -16,9 +16,11 @@ struct Ball
 	bool Arriba;
 	bool Derecha;
 };
-
-Ball InitPelota(int posX, int posY, int radius);
-void BallMovment(Ball& Pelota);
-void BallMovmentLimit(Ball& Pelota, Player& Player1, Player& Player2);
-void BallColisionWithPlayers(Ball& Pelota, Player& Player1, Player& Player2);
+namespace Pelota
+{
+	Ball InitPelota(int posX, int posY, int radius);
+	void BallMovment(Ball& Pelota);
+	void BallMovmentLimit(Ball& pelota, Player& player1, Player& player2);
+	void BallColisionWithPlayers(Ball& pelota, Player& player1, Player& player2);
+}
 #endif // !PELOTA_H

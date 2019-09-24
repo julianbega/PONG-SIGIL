@@ -1,17 +1,16 @@
 #ifndef Pantalla_gameplay
 #define Pantalla_gameplay
+
 #include "..\Lib\sigil-vc2015\include\sl.h"
-#include <string>
-#include <iostream>
+
 #include "PantallaMenu.h"
 #include "Pantalla game over.h"
-using namespace std;
-
-
-enum Colors { Red = 1, Blue, Green, Yellow };
-void TextColor(int ColorName);
-void DrawGamePlay(Ball& Pelota, Player& Player1, Player& Player2, int& CurrentScreen);
-void DrawMenu();
-void DrawGameOver();
-
+enum Colors { Red = 1, Blue, Green, Yellow, White, Orange, Cyan, Purple };
+namespace Draw
+{
+void ChangeColor(int ColorName);
+void gamePlay(Ball& pelota, Player& player1, Player& player2, int& currentScreen);
+void menu();
+void gameOver(bool P1Win);
+}
 #endif // !Pantalla gameplay
