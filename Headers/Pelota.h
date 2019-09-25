@@ -1,7 +1,7 @@
 #ifndef PELOTA_H
 #define PELOTA_H
 
-#include "GlobalShit.h"
+#include "GlobalStuff.h"
 #include "Paleta.h"
 
 #include <string>

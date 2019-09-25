@@ -26,6 +26,7 @@
     <ClCompile Include="..\src\PantallaMenu.cpp" />
     <ClCompile Include="..\src\Pelota.cpp" />
     <ClCompile Include="..\src\Source.cpp" />
+    <ClCompile Include="GlobalStuff.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Headers\Paleta.h" />
@@ -35,7 +36,7 @@
     <ClInclude Include="..\Headers\PantallaMenu.h" />
     <ClInclude Include="..\Headers\Pelota.h" />
     <ClInclude Include="..\Headers\Source.h" />
-    <ClInclude Include="..\Headers\GlobalShit.h" />
+    <ClInclude Include="..\Headers\GlobalStuff.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AF21F123-80AB-4F52-8AA1-B5957092975C}</ProjectGuid>
@@ -100,7 +101,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)Lib\sigil-vc2015\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Lib\sigil-vc2015\include;$(SolutionDir)src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\Lib\sigil-vc2015\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>

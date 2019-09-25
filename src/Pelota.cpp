@@ -57,7 +57,7 @@ Ball InitPelota(int posX, int posY, int radius) {
 	Pelota.Position.y = posY;
 	Pelota.Radius = radius;
 	Pelota.numVertices = 50;
-	Pelota.StandarSpeed = 400;
+	Pelota.StandarSpeed = screenHeight;
 	Pelota.Arriba = true;
 	Pelota.Derecha = true;
 	return Pelota;

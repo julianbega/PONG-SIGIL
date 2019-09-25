@@ -8,7 +8,8 @@
 
 using namespace std;
 
-void Menu(Player& player1, Player& player2, Ball& pelota, int& currentScreen);
+void MainMenu(Player& player1, Player& player2, Ball& pelota, int& currentScreen);
 void MenuUpdate(int& currentScreen);
+void SelectSizeMenu();
 
 #endif // !PANTALLAMENU_H

@@ -18,15 +18,16 @@ namespace Game
 		if (player2.puntos > 1) {
 			currentScreen = GameOverScreen;
 		}
-		if (slGetKey('X'))
+		if (GetKeyUp(SL_KEY_ESCAPE))
 		{
 			currentScreen = MenuScreen;
 		}
+	
 
 	}
 
 	void loop() {
-
+		SelectSizeMenu();
 		Ball pelota;
 		Player player1;
 		Player player2;
@@ -44,7 +45,7 @@ namespace Game
 			switch (currentScreen)
 			{
 			case MenuScreen:
-				Menu(player1, player2, pelota, currentScreen);
+				MainMenu(player1, player2, pelota, currentScreen);
 				break;
 
 			case GameplayScreen:
@@ -58,20 +59,22 @@ namespace Game
 			case End:
 				gameIsRuning = false;
 				break;
+			
+
 			default:
 				break;
 			}
+			
 		}
 		slClose();
 	}
 
 	void Init(Player& player1, Player& player2, Ball& pelota, int& currentScreen) {
 		currentScreen = 1;
-		pelota = Pelota::InitPelota(screenWidth / 2, screenHeight / 2, 9);
-		player1 = Paleta::InitPlayer(40, 80, 20, 80);
-		player2 = Paleta::InitPlayer(screenWidth - 40, 80, 20, 80);
+		pelota = Pelota::InitPelota(screenWidth / 2, screenHeight / 2, screenHeight/50);
+		player1 = Paleta::InitPlayer(screenHeight / 10, screenWidth / 10, screenHeight / 22, screenWidth / 10);
+		player2 = Paleta::InitPlayer(screenWidth - screenHeight / 10, screenWidth / 10, screenHeight / 22, screenWidth / 10);
 		// set up our window and a few resources we need
-		slWindow(screenWidth, screenHeight, "Simple SIGIL Example", false);
-		slSetFont(slLoadFont("../Fonts/white_rabbit.ttf"), 24);
+		
 	}
 }

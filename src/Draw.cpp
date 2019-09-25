@@ -61,7 +61,7 @@ void gamePlay(Ball& pelota, Player& player1, Player& player2, int& currentScreen
 	slText(screenWidth - 180, screenHeight - 20, PuntosP2.c_str());
 	if (slGetKey(SL_KEY_ESCAPE))
 	{
-		Menu(player1, player2, pelota, currentScreen);
+		MainMenu(player1, player2, pelota, currentScreen);
 	}
 	
 
@@ -70,24 +70,31 @@ void gamePlay(Ball& pelota, Player& player1, Player& player2, int& currentScreen
 
 void menu() {
 	ChangeColor(Green);
-	slSetFontSize(30);
-	slText(60, screenHeight / 2, "Presion esc para salir y enter para iniciar ");
+	slSetFontSize(screenHeight / 15);
+	slText(screenWidth / 13, screenHeight / 2, "Presion esc para salir y enter para iniciar ");
+	slRender();
+}
+
+void ScreenMenu() {
+	ChangeColor(Green);
+	slSetFontSize(screenHeight / 15);
+	slText(screenWidth / 13, screenHeight / 2, "Selecciones una resolucion" );
 	slRender();
 }
 
 void gameOver(bool P1Win) {
-	slSetFontSize(30);
+	slSetFontSize(screenHeight / 15);
 
 	if (P1Win == true)
 	{	
 	ChangeColor(Red);
-	slText(60, screenHeight / 2, "Player 1 victory");
+	slText(screenWidth/13, screenHeight / 2, "Player 1 victory");
 	//Player 1 win
 	}
 	if (P1Win == false)
 	{
 	ChangeColor(Blue);
-	slText(60, screenHeight / 2, "Player 2 victory");
+	slText(screenWidth / 13, screenHeight / 2, "Player 2 victory");
 	//Player 2 win
 	}
 	slRender();

@@ -36,6 +36,9 @@
     <ClCompile Include="..\src\PantallaMenu.cpp">
       <Filter>src\Screens</Filter>
     </ClCompile>
+    <ClCompile Include="GlobalStuff.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Headers\Paleta.h">
@@ -59,7 +62,7 @@
     <ClInclude Include="..\Headers\Source.h">
       <Filter>Headers</Filter>
     </ClInclude>
-    <ClInclude Include="..\Headers\GlobalShit.h">
+    <ClInclude Include="..\Headers\GlobalStuff.h">
       <Filter>Headers</Filter>
     </ClInclude>
   </ItemGroup>

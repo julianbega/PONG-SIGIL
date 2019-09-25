@@ -1,7 +1,7 @@
 #ifndef PALETA_H
 #define PALETA_H
 #include "..\Lib\sigil-vc2015\include\sl.h"
-#include "GlobalShit.h"
+#include "GlobalStuff.h"
 
 struct Rectangle
 {

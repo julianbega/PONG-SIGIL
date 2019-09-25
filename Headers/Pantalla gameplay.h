@@ -11,6 +11,7 @@ namespace Draw
 void ChangeColor(int ColorName);
 void gamePlay(Ball& pelota, Player& player1, Player& player2, int& currentScreen);
 void menu();
+void ScreenMenu();
 void gameOver(bool P1Win);
 }
 #endif // !Pantalla gameplay
