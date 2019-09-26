@@ -1,14 +1,8 @@
-﻿  Draw.cpp
-  GlobalStuff.cpp
-  main.cpp
-  Ball.cpp
-  Player.cpp
-  GameScreen.cpp
-c:\users\administrador\desktop\pongsigil_julianbega\src\screens\gamescreen.cpp(102): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-  GameOverScreen.cpp
-  MenuScreen.cpp
+﻿  GameScreen.cpp
+c:\users\administrador\desktop\pong-sigil\pongsigil_julianbega\src\screens\gamescreen.cpp(103): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
   Generando código
-c:\users\administrador\desktop\pongsigil_julianbega\src\global\globalstuff.cpp(63): warning C4715: 'GetKeyUp': no todas las rutas de acceso de control devuelven un valor
-  All 101 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  4 of 101 functions ( 4.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
-  PongSigil_JulianBega.vcxproj -> C:\Users\Administrador\Desktop\PongSigil_JulianBega\Exe\Release\PongSigil_JulianBega.exe
+  PongSigil_JulianBega.vcxproj -> C:\Users\Administrador\Desktop\PONG-SIGIL\PongSigil_JulianBega\Exe\Release\PongSigil_JulianBega.exe

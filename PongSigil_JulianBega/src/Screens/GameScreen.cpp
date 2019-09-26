@@ -23,6 +23,7 @@ namespace Game
 		if (GetKeyUp(SL_KEY_ESCAPE))
 		{
 			currentScreen = MenuScreen;
+			Init(player1, player2, ball, currentScreen);
 		}
 	
 
@@ -55,12 +56,12 @@ namespace Game
 	void StartGame() 
 	{
 		Menu::SelectSize();
-		Ball pelota;
+		Ball ball;
 		Player player1;
 		Player player2;
 		int currentScreen;
-		Init(player1, player2, pelota, currentScreen);
-		UpdateLoop(player1, player2, pelota, currentScreen);
+		Init(player1, player2, ball, currentScreen);
+		UpdateLoop(player1, player2, ball, currentScreen);
 
 	}
 
