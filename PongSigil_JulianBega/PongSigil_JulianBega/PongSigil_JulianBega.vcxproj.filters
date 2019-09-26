@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{f68585f2-6c52-4f56-b092-07fe57ee1a34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Screens">
+      <UniqueIdentifier>{d9a6c550-12ac-42fe-b9d2-2a271137c0aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Global">
+      <UniqueIdentifier>{07ddd329-e7b4-4e56-8e08-05fe2e5603c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Draw">
+      <UniqueIdentifier>{fc9f84cd-1960-4bf9-99a5-812ea7a1d812}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Object">
+      <UniqueIdentifier>{a324f969-becd-43b6-8a49-62f69c73053d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screens\GameOverScreen.cpp">
+      <Filter>src\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screens\GameScreen.cpp">
+      <Filter>src\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Screens\MenuScreen.cpp">
+      <Filter>src\Screens</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Global\GlobalStuff.cpp">
+      <Filter>src\Global</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Draw\Draw.cpp">
+      <Filter>src\Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Objects\Ball.cpp">
+      <Filter>src\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Objects\Player.cpp">
+      <Filter>src\Object</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Screens\GameScreen.h">
+      <Filter>src\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Screens\GameOverScreen.h">
+      <Filter>src\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Screens\MenuScreen.h">
+      <Filter>src\Screens</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Global\GlobalStuff.h">
+      <Filter>src\Global</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Draw\Draw.h">
+      <Filter>src\Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Objects\Ball.h">
+      <Filter>src\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Objects\Player.h">
+      <Filter>src\Object</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
