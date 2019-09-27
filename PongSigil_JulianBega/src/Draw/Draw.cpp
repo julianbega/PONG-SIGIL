@@ -1,5 +1,7 @@
 #include "Draw.h"
 
+namespace practicaprofesionaljulianbegapongsigil
+{
 
 namespace Draw
 {
@@ -106,5 +108,6 @@ static void ChangeColor(int colorName)
 	default:
 		break;
 	}
+}
 }
 }

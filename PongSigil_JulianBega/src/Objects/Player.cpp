@@ -1,5 +1,7 @@
 #include "Player.h"
 
+namespace practicaprofesionaljulianbegapongsigil
+{
 namespace Paleta
 {
 
@@ -26,5 +28,5 @@ void MovePlayer(Player& player, int KeyUp, int KeyDown)
 		player.rec.pos.y = player.rec.pos.y - (screenHeight * 2/3) * slGetDeltaTime();
 	}
 }
-
+}
 }

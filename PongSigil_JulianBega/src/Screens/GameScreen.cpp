@@ -1,6 +1,7 @@
 #include "GameScreen.h"
 
-
+namespace practicaprofesionaljulianbegapongsigil
+{
 namespace Game
 {
 	static void PVP(Player& player1, Player& player2, Ball& ball, int& currentScreen)
@@ -12,15 +13,15 @@ namespace Game
 		Pelota::BallMovmentLimit(ball, player1, player2);
 		Pelota::BallColisionWithPlayers(ball, player1, player2);
 		Draw::GamePlay(ball, player1, player2, currentScreen);
-		if (player1.puntos > 1) 
+		if (player1.puntos > pointsToWin)
 		{
 			currentScreen = GameOverScreen;
 		}
-		if (player2.puntos > 1) 
+		if (player2.puntos > pointsToWin)
 		{
 			currentScreen = GameOverScreen;
 		}
-		if (GetKeyUp(SL_KEY_ESCAPE))
+		if (KeyManager::GetKeyUp(slGetKey('A')))
 		{
 			currentScreen = MenuScreen;
 			Init(player1, player2, ball, currentScreen);
@@ -45,7 +46,7 @@ namespace Game
 		{
 			currentScreen = GameOverScreen;
 		}
-		if (GetKeyUp(SL_KEY_ESCAPE))
+		if (KeyManager::GetKeyUp(SL_KEY_ESCAPE))
 		{
 			currentScreen = MenuScreen;
 		}
@@ -70,10 +71,12 @@ namespace Game
 		bool gameIsRuning = true;
 		while (gameIsRuning)
 		{
+
 			switch (currentScreen)
 			{
 			case MenuScreen:
 				Menu::Main(player1, player2, ball, currentScreen);
+				
 				break;
 
 			case GameplayScreen:
@@ -92,7 +95,10 @@ namespace Game
 			default:
 				break;
 			}
-			
+
+			KeyManager::Update(SL_KEY_ESCAPE, slGetKey(SL_KEY_ESCAPE));
+			KeyManager::Update('A', slGetKey('A'));
+			KeyManager::Update(SL_KEY_LEFT, slGetKey(SL_KEY_LEFT));
 		}
 		slClose();
 	}
@@ -106,4 +112,5 @@ namespace Game
 		// set up our window and a few resources we need
 		
 	}
+}
 }

@@ -6,10 +6,12 @@
 #include "Ball.h"
 #include "MenuScreen.h"
 
+namespace practicaprofesionaljulianbegapongsigil
+{
+void GameOver(Player& player1, Player& player2, Ball& ball, int& currentScreen);
 
-void GameOver(Player& player1, Player& player2, Ball& pelota, int& currentScreen);
 
-
+}
 
 
 #endif // !PANTALLA_GAME_OVER_H

@@ -6,6 +6,8 @@
 #include "MenuScreen.h"
 #include "GameOverScreen.h"
 
+namespace practicaprofesionaljulianbegapongsigil
+{
 
 namespace Draw
 {
@@ -17,4 +19,7 @@ void ChangeColor(int ColorName);
 }
 
 enum Colors { Red = 1, Blue, Green, Yellow, White, Orange, Cyan, Purple };
+
+}
 #endif // !Pantalla gameplay
+

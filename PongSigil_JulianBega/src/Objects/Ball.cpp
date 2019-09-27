@@ -1,5 +1,6 @@
 #include "Ball.h"
-
+namespace practicaprofesionaljulianbegapongsigil
+{
 namespace Pelota 
 {
 
@@ -65,5 +66,5 @@ void BallColisionWithPlayers(Ball& ball, Player& player1, Player& player2)
 		ball.Derecha = false;
 	}
 }
-
+}
 }

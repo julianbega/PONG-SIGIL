@@ -3,6 +3,8 @@
 
 #include "sl.h"
 
+namespace practicaprofesionaljulianbegapongsigil
+{
 enum Pantallas { MenuScreen = 1, GameplayScreen, GameOverScreen, End };
 extern int screenWidth;
 extern int screenHeight;
@@ -12,14 +14,18 @@ struct Vector2
 	double y;
 };
 
-bool GetKeyUp(int Key);
+namespace KeyManager
+{
+	void Update(int key, int state);
+	bool GetKeyUp(int key);
+}
 
-extern bool EscKeyWasPress;
-extern bool AKeyWasPress;
-extern bool LeftKeyWasPress;
-extern bool EscKeyIsPress;
-extern bool AKeyIsPress;
-extern bool LeftKeyIsPress;
+extern int escKey;
+extern int aKey;
+extern int leftKey;
+
+}
+
 
 #endif
 

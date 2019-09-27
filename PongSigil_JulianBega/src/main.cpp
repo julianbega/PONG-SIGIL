@@ -6,7 +6,7 @@ int screenWidth = 800;
 
 void main()
 {
-	Game::StartGame();
+	practicaprofesionaljulianbegapongsigil::Game::StartGame();
 }
 
 

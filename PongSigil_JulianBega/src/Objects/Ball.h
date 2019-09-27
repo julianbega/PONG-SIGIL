@@ -6,6 +6,8 @@
 #include "GlobalStuff.h"
 #include "Player.h"
 
+namespace practicaprofesionaljulianbegapongsigil
+{
 struct Ball
 {
 	Vector2 Position;
@@ -21,5 +23,6 @@ namespace Pelota
 	void BallMovment(Ball& ball);
 	void BallMovmentLimit(Ball& ball, Player& player1, Player& player2);
 	void BallColisionWithPlayers(Ball& ball, Player& player1, Player& player2);
+}
 }
 #endif // !PELOTA_H

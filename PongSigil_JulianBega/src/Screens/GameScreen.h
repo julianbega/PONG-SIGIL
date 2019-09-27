@@ -5,6 +5,10 @@
 
 #include "MenuScreen.h"
 
+namespace practicaprofesionaljulianbegapongsigil
+{
+const int pointsToWin = 1;
+
 namespace Game
 {
 void PVP(Player& player1, Player& player2, Ball& ball, int& currentScreen);
@@ -13,5 +17,8 @@ void StartGame();
 void UpdateLoop(Player& player1, Player& player2, Ball& ball, int& currentScreen);
 void Init(Player& player1, Player& player2, Ball& ball, int& currentScreen);
 }
+
+}
+
 #endif // !PANTALLA_DE_JUEGO_H
 

@@ -3,6 +3,8 @@
 #include "sl.h"
 #include "GlobalStuff.h"
 
+namespace practicaprofesionaljulianbegapongsigil
+{
 struct Rectangle
 {
 	Vector2 pos;
@@ -23,5 +25,5 @@ namespace Paleta
 Player InitPlayer(int posX, int posY, int width, int height);
 void MovePlayer(Player& player, int KeyUp, int KeyDown);
 }
-
+}
 #endif // !PALETA_H
