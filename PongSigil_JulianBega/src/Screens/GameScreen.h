@@ -7,7 +7,7 @@
 
 namespace practicaprofesionaljulianbegapongsigil
 {
-const int pointsToWin = 1;
+const int pointsToWin = 2;
 
 namespace Game
 {

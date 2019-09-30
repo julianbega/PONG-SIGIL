@@ -57,13 +57,30 @@ void BallMovmentLimit(Ball& ball, Player& player1, Player& player2)
 
 void BallColisionWithPlayers(Ball& ball, Player& player1, Player& player2)
 {
-	if (ball.Position.x-ball.Radius <= player1.rec.pos.x + player1.rec.width / 2 + ball.Radius && ball.Position.y-ball.Radius <= player1.rec.pos.y + player1.rec.height / 2 && ball.Position.y+ball.Radius >= player1.rec.pos.y - player1.rec.height / 2 && ball.Position.x + ball.Radius >= player1.rec.pos.x + player1.rec.width / 2 )
+	if (ball.Position.x - ball.Radius <= player1.rec.pos.x + player1.rec.width / 2 + ball.Radius && ball.Position.y - ball.Radius <= player1.rec.pos.y + player1.rec.height / 2 && ball.Position.y + ball.Radius >= player1.rec.pos.y - player1.rec.height / 2 && ball.Position.x + ball.Radius >= player1.rec.pos.x + player1.rec.width / 2)
 	{
 		ball.Derecha = true;
+		if (ball.Position.y >= player1.rec.pos.y)
+		{
+			ball.Arriba = true;
+		}
+		if (ball.Position.y <= player1.rec.pos.y)
+		{
+			ball.Arriba = false;
+		}
 	}
-	if (ball.Position.x+ball.Radius >= player2.rec.pos.x - player2.rec.width / 2 - ball.Radius && ball.Position.y-ball.Radius <= player2.rec.pos.y + player2.rec.height / 2 && ball.Position.y+ ball.Radius >= player2.rec.pos.y - player2.rec.height / 2 && ball.Position.x - ball.Radius <= player2.rec.pos.x - player2.rec.width / 2)
+
+	if (ball.Position.x + ball.Radius >= player2.rec.pos.x - player2.rec.width / 2 - ball.Radius && ball.Position.y - ball.Radius <= player2.rec.pos.y + player2.rec.height / 2 && ball.Position.y + ball.Radius >= player2.rec.pos.y - player2.rec.height / 2 && ball.Position.x - ball.Radius <= player2.rec.pos.x - player2.rec.width / 2)
 	{
 		ball.Derecha = false;
+		if (ball.Position.y >= player2.rec.pos.y)
+		{
+			ball.Arriba = true;
+		}
+		if (ball.Position.y <= player2.rec.pos.y)
+		{
+			ball.Arriba = false;
+		}
 	}
 }
 }

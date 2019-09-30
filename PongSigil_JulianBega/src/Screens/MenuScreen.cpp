@@ -46,14 +46,15 @@ void Main(Player& player1, Player& player2, Ball& ball, int& currentScreen)
 void Update(int& currentScreen)
 {
 
-		if (slGetKey(SL_KEY_ESCAPE))
-		{
-			currentScreen = End;
-		}
-		if (slGetKey(SL_KEY_ENTER))
-		{
-			currentScreen = GameplayScreen;
-		}
+	if (KeyManager::GetKeyUp(SL_KEY_ESCAPE, slGetKey(SL_KEY_ESCAPE)))
+	{
+		currentScreen = End;
+	}
+	if (slGetKey(SL_KEY_ENTER))
+	{
+		currentScreen = GameplayScreen;
+
+	}
 }
 }
 

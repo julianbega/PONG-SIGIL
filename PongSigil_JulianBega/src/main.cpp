@@ -1,12 +1,10 @@
 ﻿
 #include "GameScreen.h"
 
-int screenHeight = 450;
-int screenWidth = 800;
-
+using namespace practicaprofesionaljulianbegapongsigil;
 void main()
 {
-	practicaprofesionaljulianbegapongsigil::Game::StartGame();
+	Game::StartGame();
 }
 
 

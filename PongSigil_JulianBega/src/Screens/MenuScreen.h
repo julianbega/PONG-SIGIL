@@ -5,6 +5,7 @@
 
 #include "Draw.h"
 #include "Ball.h"
+#include "GameScreen.h"
  
 namespace practicaprofesionaljulianbegapongsigil
 {
@@ -14,7 +15,9 @@ namespace Menu
 {
 	void SelectSize();
 	void Main(Player& player1, Player& player2, Ball& ball, int& currentScreen);
-	void Update(int& currentScreen);
+	void Update( int& currentScreen);
+
+
 }
 }
 

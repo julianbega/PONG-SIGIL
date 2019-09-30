@@ -17,7 +17,7 @@ struct Vector2
 namespace KeyManager
 {
 	void Update(int key, int state);
-	bool GetKeyUp(int key);
+	bool GetKeyUp(int key, int state);
 }
 
 extern int escKey;

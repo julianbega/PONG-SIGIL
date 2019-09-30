@@ -1,7 +1,7 @@
-﻿  MenuScreen.cpp
+﻿  GameScreen.cpp
   Generando código
-  4 of 103 functions ( 3.9%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  4 of 102 functions ( 3.9%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    2 functions had inline decision re-evaluated but remain unchanged
   Generación de código finalizada
   PongSigil_JulianBega.vcxproj -> C:\Users\Administrador\Desktop\PONG-SIGIL\PongSigil_JulianBega\Exe\Release\PongSigil_JulianBega.exe

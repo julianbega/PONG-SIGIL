@@ -28,16 +28,43 @@ namespace KeyManager
 			leftKey = state;
 		}
 	}
-	bool GetKeyUp(int key)
+	bool GetKeyUp(int key, int state)
 	{
-		if (aKey == 1 && key == 0)
+		if (key != 'A' || key != SL_KEY_LEFT || key || SL_KEY_ESCAPE)
 		{
-			return true;
+		
+		if (key == 'A') {
+			if (aKey == 1 && state == 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
-		else
-		{
-			return false;
+		if (key == SL_KEY_ESCAPE) {
+			if (escKey == 1 && state == 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
+		if (key == SL_KEY_LEFT) {
+			if (leftKey == 1 && state == 0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		}
+
 	}
 
 }
